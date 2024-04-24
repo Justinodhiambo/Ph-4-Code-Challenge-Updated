@@ -1,4 +1,4 @@
-# server/models.py
+# models.py
 
 from app import db
 
@@ -18,7 +18,6 @@ class VendorSweet(db.Model):
     sweet = db.relationship('Sweet', backref='vendor_sweets')
     vendor = db.relationship('Vendor', backref='vendor_sweets')
 
-    # Add validations
     def validate(self):
         errors = []
         if self.price is None:
